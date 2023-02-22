@@ -1,0 +1,405 @@
+
+
+.gh-featured {
+  margin-top: 36px;
+}
+
+.gh-featured .title {
+  font-weight: 500;
+  color: #c3c3c3;
+}
+
+.gh-featured img {
+  margin-top: 8px;
+  opacity: .35;
+}
+
+.subscribe-container {
+  margin-top: 9.6rem;
+  padding: 3.8rem;
+  text-align: center;
+  background-color: #ececff;
+  border-radius: 4px;
+}
+
+@media screen and (max-width: 768px) {
+  .subscribe-container {
+    padding: 2.4rem;
+  }
+}
+
+.subscribe-container small {
+  margin-bottom: 1.6rem;
+  display: block;
+  font-weight: normal;
+  font-style: italic;
+  color: #29295c;
+  font-size: 1.6rem;
+}
+
+.subscribe-container .title {
+  margin-bottom: 0.8rem;
+  font-weight: bold;
+  color: #29295c;
+  font-size: 2.8rem;
+}
+
+.subscribe-container .subtitle {
+  color: #29295c;
+  font-size: 1.6rem;
+  max-width: 500px;
+  margin: 1rem auto 3.2rem auto
+}
+
+.subscribe-form {
+  font-size: 18px;
+}
+
+.subscribe-form input, button {
+  width: 100%;
+  max-width: 375px;
+  margin-bottom: 0.8rem;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  border-radius: 5px;
+  padding: 6px 10px;
+}
+
+.subscribe-form input {
+  text-align: center;
+  border: 1px solid #bababa;
+}
+
+.subscribe-form button {
+  border: 1px solid #2244DC;
+  cursor: pointer;
+  background-color: #2244DC;
+  color: #fff;
+  font-weight: 400;
+  transition: background-color .25s;
+  margin-bottom: 0;
+}
+
+.subscribe-form button:hover {
+  background-color: #1d3dce;
+}
+
+.subscribe-form .button-loader, .subscribe-form .message-error, .subscribe-form .message-success {
+  display: none;
+}
+
+.subscribe-form .message-error, .subscribe-form .message-success {
+  margin-top: 0.8rem;
+}
+
+.subscribe-form.loading .button-loader {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.subscribe-form.loading .button-content {
+ display: none;
+}
+
+.subscribe-form.error .message-error, .subscribe-form.success .message-success {
+ display: block
+}
+
+.message-success {
+ color: green;
+}
+
+.message-error {
+ color: red;
+}
+
+.testimonial {
+  margin-top: 3.2rem;
+}
+
+.testimonial .quote {
+  font-size: 1.4rem;
+  color: #29295c;
+}
+
+.testimonial .author {
+  margin-top: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 400px) {
+  .testimonial .author {
+    flex-direction: column;
+  }
+
+  .testimonial .author .name {
+    margin-left: 0;
+    margin-top: .8rem;
+  }
+}
+
+.testimonial .author img {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 100%;
+}
+
+.testimonial .author .name {
+  margin-left: 1.6rem;
+  font-size: 1.4rem;
+  color: #29295c;
+}
+
+/* Success message on page load */
+body.subscribe-success .subscribe-success-message {
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.subscribe-success-message {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 9000;
+  color: #fff;
+  text-align: center;
+  background: green;
+  transition: all .35s cubic-bezier(.19,1,.22,1) .5s;
+  transform: translateY(-175%);
+}
+
+.gh-read-more {
+  margin-top: 9.6rem;
+  text-align: center;
+}
+
+.gh-read-more ul{
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.gh-read-more ul li h3, .gh-read-more a.link {
+  font-size: 1.872rem;
+  font-weight: 500;
+  margin: 3.6rem 0;
+}
+
+/* Amendments to content.css */
+
+.gh-content dl, .gh-content ol, .gh-content ul {
+  margin-top: 1.2rem;
+}
+
+.gh-content>blockquote, .gh-content>blockquote+*, .gh-content>hr, .gh-content>hr+* {
+  margin-top: 3.8rem;
+}
+
+ /* table of contents */
+
+.gh-content {
+  position: relative;
+}
+
+.gh-content-side {
+  display: none;
+  bottom: 0;
+  grid-row-start: 1;
+  margin: 0!important;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  font-size: 1.4rem;
+}
+
+.gh-sticky-sidebar {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 80px);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 50px;
+}
+
+.gh-sticky-sidebar strong {
+  align-items: center;
+  display: flex;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 30px 10px 0;
+}
+
+.gh-toc > .toc-list {
+  position: relative;
+}
+
+.toc-list {
+  overflow: hidden;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.toc-list .is-collapsible {
+  padding-left: 1.6rem !important;
+}
+
+@media (min-width: 1300px) {
+   .gh-content-side {
+    /* position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-top: 4vmin;
+    grid-column: wide-start / main-start; Place the TOC to the left of the content */
+
+    display: inline-block;
+    grid-column: 1/span 3;
+    position: absolute;
+    padding: 0 7.2rem 0 0;
+  }
+
+  .gh-toc {
+    position: sticky; /* On larger screens, TOC will stay in the same spot on the page */
+    top: 4vmin;
+  }
+}
+
+a.toc-link {
+  color: rgba(0,0,0,.4) !important;
+  display: inline-flex;
+  font-weight: 400;
+  height: 100%;
+  line-height: 2rem;
+  padding: 6px 0;
+  border-bottom: none;
+  text-decoration: none;
+  transition: .4s ease;
+}
+
+a.toc-link:hover {
+  color: #15171a !important;
+}
+
+.toc-link::before{
+  display: none !important;
+}
+
+.gh-toc .is-active-link{
+  color: #15171a !important;
+  font-weight: 450;
+}
+
+.gh-toc .is-active-link::before {
+  background-color: var(--ghost-accent-color); /* Defines TOC   accent color based on Accent color set in Ghost Admin */
+}
+
+.exit-intent-popup {
+  position: fixed;
+  z-index: 200;
+  inset: 0px;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.1s ease-in;
+}
+
+.exit-intent-popup.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.background-overlay {
+  position: fixed;
+  inset: 0px;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(16px);
+  animation: 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 normal none running;
+}
+
+.newsletter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  max-width: 380px;
+  padding: 24px;
+  box-shadow: 0px 4px 12px rgba(16, 24, 40, 0.1), 0px 4px 4px -2px rgba(16, 24, 40, 0.06);
+  border-radius: 24px;
+  text-align: center;
+}
+
+@media screen and (max-width: 500px) {
+  .newsletter {
+    max-width: 100%;
+  }
+}
+
+.newsletter .close {
+  background: #EAECF0;
+  border-radius: 100px;
+  padding: 4px;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  border: none;
+  cursor: pointer;
+  transition: background .2s ease;
+}
+
+.newsletter .close:hover {
+  background-color: #e1e5eb;
+}
+
+.newsletter .logo img{
+  height: 56px;
+  width: 56px;
+  position: absolute;
+  top: -28px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.newsletter .text {
+  margin-top: 20px;
+}
+
+.newsletter .text h2{
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 36px;
+  font-style: italic;
+  color: #4900EE;
+}
+
+.newsletter .text p{
+  color: #565C5C;
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+.newsletter .subscribe-form {
+  margin-top: 16px;
+}
+
+.newsletter .sub-text {
+  color: #565C5C;
+  font-size: 12px;
+  margin-top: 16px;
+  display: block;
+}

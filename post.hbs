@@ -1,0 +1,162 @@
+{{!< default}}
+
+<main class="gh-main gh-outer">
+    <div class="gh-inner">
+        {{#post}}
+            <article class="gh-article {{post_class}}">
+                <section class="gh-content gh-canvas">
+										<header class="gh-article-header">
+											<h1 class="gh-article-title">{{title}}</h1>
+												<div class="gh-card-meta">
+														<span>
+															{{#primary_author}}
+																<a href="{{url}}" class="no-style">{{name}}</a>
+															{{/primary_author}}
+														</span>
+														<span datetime="{{date format="YYYY-MM-DD"}}">{{date}}</span>
+														{{#if reading_time}}
+																<span class="gh-card-length">{{reading_time}}</span>
+														{{/if}}
+														{{#if @site.comments_enabled}}
+																{{comment_count class="gh-card-comments"}}
+														{{/if}}
+												</div>
+
+											<div class="gh-post-meta" style="display: none;">
+												<figure class="gh-author-image">
+														<img src="{{profile_image}}" alt="{{name}}">
+												</figure>
+												<div class="gh-author-name">
+														<a href="{{url}}">{{name}}</a>
+												</div>
+												<time class="gh-article-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
+											</div>
+										</header>
+
+										<aside class="gh-content-side">
+											<div class="gh-sticky-sidebar">
+												<strong>On this page</strong>
+												<div class="gh-toc">
+												</div>
+											</div>
+										</aside>
+
+										{{content}}
+
+                    <aside class="gh-article-meta" style="display: none;">
+                        <div class="gh-article-meta-inner">
+                            {{#primary_author}}
+                                {{#if profile_image}}
+                                    <figure class="gh-author-image">
+                                        <img src="{{profile_image}}" alt="{{name}}">
+                                    </figure>
+                                {{/if}}
+                                <div class="gh-article-meta-wrapper">
+                                <div class="gh-author-name">
+                                    <a href="{{url}}">{{name}}</a>
+                                </div>
+                            {{/primary_author}}
+                            <time class="gh-article-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time></div>
+
+                            {{!-- {{> share-block}} --}}
+
+                            {{#if primary_tag}}
+                                <a class="gh-article-tag" href="{{primary_tag.url}}" style="--tag-color: {{primary_tag.accent_color}}">{{primary_tag.name}}</a>
+                            {{/if}}
+                        </div>
+                    </aside>
+                </section>
+
+								{{#unless @member}}
+									<section class="gh-canvas">
+										<div class="subscribe-container">
+											<small><strong>Shavin's</strong> Newsletter</small>
+											<h2 class="title">Don't miss my next article!</h2>
+											<p class="subtitle">I share insights on how to grow your product intution. Use it to get recognised for creating products that people appreciate.</p>
+
+											<form class="subscribe-form" data-members-form="subscribe">
+												<div class="cols">
+														<input type="email" data-members-email="" placeholder="your@email.com" autocomplete="false" required="">
+														<button type="submit" data-analytics='"Signup confirmation", {"props":{"location":"end of post cta"}}'>
+															<span class="button-content">Get new articles</span>
+															<span class="button-loader">
+																<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="40" height="40"><path fill="#fff" d="M20.201 5.169c-8.254 0-14.946 6.692-14.946 14.946 0 8.255 6.692 14.946 14.946 14.946s14.946-6.691 14.946-14.946c-.001-8.254-6.692-14.946-14.946-14.946zm0 26.58c-6.425 0-11.634-5.208-11.634-11.634 0-6.425 5.209-11.634 11.634-11.634 6.425 0 11.633 5.209 11.633 11.634 0 6.426-5.208 11.634-11.633 11.634z" opacity=".2"/><path fill="#fff" d="M13.39 10.433 11.455 7.75a14.855 14.855 0 0 0-4.898 5.983l3.02 1.36a11.57 11.57 0 0 1 3.813-4.659z"><animateTransform attributeName="transform" attributeType="xml" dur="0.5s" from="0 20 20" repeatCount="indefinite" to="360 20 20" type="rotate"/></path></svg>
+															</span>
+														</button>
+												</div>
+												<div class="message-success">
+														One last step! <strong>Check your inbox (or spam folder)</strong> and click the link to confirm your subscription.
+												</div>
+												<div class="message-error">
+														Barnacles! Something went wrong. Please try again.
+												</div>
+											</form>
+
+											<div class="testimonial">
+												<p class="quote" style="max-width:320px; margin: 0 auto;">
+													Articles read by product leaders in companies like Productboard, HP, Monzo, and more.
+													<br>
+													<br>
+													No spam. Unsubscribe anytime.
+												</p>
+											</div>
+
+											<div class="testimonial" style="display: none">
+												<p class="quote">
+													"One of the most practical newsletters I've read. Shavin dives deep into explaining problems and offering multiple solutions that he writes from his design experience. It's based on practical tips that make you feel like you're learning something new instead of just reading some theoretical explanations. Highly recommend!"
+												</p>
+												<div class="author">
+													<img src="/assets/images/sameer.png" alt="">
+													<p class="name">Sameer - UI/UX Designer</p>
+												</div>
+											</div>
+										</div>
+									</section>
+								{{/unless}}
+
+                {{#if comments}}
+                    <div class="gh-comments gh-canvas">
+                        <h2 class="gh-comments-title">{{comment_count empty="" single="comment" plural="comments"}}</h2>
+                        {{comments title="" count=false}}
+                    </div>
+                {{/if}}
+
+								<section class="gh-read-more">
+									<h3>Read more</h3>
+									<ul class="">
+										{{#get "posts" filter="id:-{{id}}" limit="3" as |more_posts|}}
+												{{#foreach posts}}
+													<li>
+														<h3>
+															{{#link href=(url) class="link"}}
+																{{title}}
+															{{/link}}
+														</h3>
+													</li>
+												{{/foreach}}
+										{{/get}}
+									</ul>
+									<a href="https://shavinpeiries.com/author/shavin/" class="link">Browse all articles →</a>
+								</section>
+
+                {{!-- <footer class="gh-article-footer gh-canvas">
+                    <nav class="gh-navigation">
+                        <div class="gh-navigation-previous">
+                            {{#prev_post}}
+                                <a class="gh-navigation-link" href="{{url}}">← Previous</a>
+                            {{/prev_post}}
+                        </div>
+
+                        <div class="gh-navigation-middle"></div>
+
+                        <div class="gh-navigation-next">
+                            {{#next_post}}
+                                <a class="gh-navigation-link" href="{{url}}">Next →</a>
+                            {{/next_post}}
+                        </div>
+                    </nav>
+                </footer> --}}
+            </article>
+        {{/post}}
+    </div>
+</main>
