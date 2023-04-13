@@ -121,22 +121,27 @@
                     </div>
                 {{/if}}
 
+
 								<section class="gh-read-more">
-									<h3>Read more</h3>
-									<ul class="">
-										{{#get "posts" filter="id:-{{id}}" limit="3" as |more_posts|}}
-												{{#foreach posts}}
-													<li>
-														<h3>
-															{{#link href=(url) class="link"}}
-																{{title}}
-															{{/link}}
-														</h3>
-													</li>
-												{{/foreach}}
-										{{/get}}
-									</ul>
-									<a href="https://shavinpeiries.com/author/shavin/" class="link">Browse all articles →</a>
+									<h3 class="title">Continue reading</h3>
+
+									<div class="gh-feed gh-inner home-feed">
+											{{#get "posts" filter="id:-{{id}}" limit="3" as |more_posts|}}
+													{{#foreach posts}}
+														{{> "loop"}}
+													{{/foreach}}
+											{{/get}}
+									</div>
+
+									<div class="link-group">
+										{{#if primary_tag}}
+											<a href="/tag/{{primary_tag.slug}}" class="link">Read more on {{primary_tag.name}}</a>
+											<span>or</span>
+										{{/if}}
+
+										<a href="https://shavinpeiries.com/author/shavin/" class="link">Browse all my latest articles</a>
+									</div>
+
 								</section>
 
                 {{!-- <footer class="gh-article-footer gh-canvas">

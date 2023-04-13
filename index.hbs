@@ -49,7 +49,31 @@
 </section>
 
 <main class="gh-main gh-outer">
-    <div class="gh-feed gh-inner">
+    <div class="gh-inner">
+    {{#get "tags" limit="all" include="count.posts" order="count.posts desc"}}
+        <div class="tag-list-container">
+            <nav class="tag-list">
+            <ul>
+                <li>
+                    <p class="label">Topics</p>
+                </li>
+                {{#foreach tags}}
+                <li>
+                    <a href="{{url}}">{{name}}</a>
+                </li>
+                {{/foreach}}
+            </ul>
+            </nav>
+            <div class="tag-list-fade"></div>
+        </div>
+        {{/get}}
+
+        {{#if is_home}}
+            {{> "loop"}}
+        {{/if}}
+    </div>
+
+    <div class="gh-feed gh-inner home-feed">
         {{#foreach posts}}
             {{> "loop"}}
         {{/foreach}}

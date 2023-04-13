@@ -16,7 +16,7 @@
                 {{#if location}}
                     <div class="gh-author-location">{{location}}</div>
                 {{/if}}
-                <div class="gh-author-social">
+                <div class="gh-author-social" style="margin-top: 2.4rem">
                     {{#if website}}
                         <a class="gh-author-social-link" href="{{website}}" target="_blank" rel="noopener">{{website}}</a>
                     {{/if}}
@@ -30,7 +30,7 @@
             </footer>
         </section>
     {{/author}}
-    <div class="gh-feed{{#match @custom.header_section_layout "!=" "Large background"}} gh-inner{{/match}}">
+    <div class="gh-feed{{#match @custom.header_section_layout "!=" "Large background"}} gh-inner{{/match}} home-feed">
         {{#foreach posts}}
             {{> "loop"}}
         {{/foreach}}
