@@ -950,9 +950,9 @@ a.no-style{
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
 }
 
-/* .home-feed .gh-card-link:hover {
+/* .home-feed .gh-card-link:hover .gh-card-read-more {
     text-decoration: none;
-    background-color: rgba(248, 250, 252);
+    background-color: var(--color-border);
     transition: all 0.2s ease-in;
 } */
 
@@ -993,6 +993,22 @@ a.no-style{
     font-weight: normal;
     color: var(--color-secondary-text);
     margin-top: 0;
+}
+
+.home-feed .gh-card-wrapper {
+    display: block;
+    text-align: left;
+}
+
+.home-feed .gh-card-read-more {
+    display: inline-block;
+    margin-top: 1.8rem;
+    border: 1px solid var(--color-border);
+    color: var(--color-secondary-text);
+    border-radius: 9999px;
+    padding: 0.8rem 1.6rem;
+    font-size: 1.2rem;
+    font-weight: 500;
 }
 
 .tag-list-container {
